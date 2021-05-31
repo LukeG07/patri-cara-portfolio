@@ -1,6 +1,6 @@
 #contact {
-    background: #f5f2f1;
-    min-height: 90vh;
+    color: #282a30;
+    min-height: 50vh;
     align-content: center;
     h2 {
         color: #282a30;
@@ -10,24 +10,6 @@
 }
 
 .contact-container {
-    display: flex;
-    flex-direction: row;
-    gap: 20rem;
-    //position: relative;
-    justify-content:space-between;
-    .contact-pic {
-        flex: 1;
-        //position: relative;
-        height: 70vh;
-        //width: 100%;
-        //margin-right: 5%;
-        //top: 100px;
-        img {
-            height: 100%;
-        }
-    }
-}
-.contact-info {
     flex: 1;
     display: flex;
     flex-direction: column;

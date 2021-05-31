@@ -48,6 +48,7 @@ p {
   font-family: quasimoda-2, sans-serif;
   font-weight: 100;
   font-style: normal;
+  text-align: justify;
 }
 
 a {
@@ -60,14 +61,73 @@ a {
 }
 
 section:before {
-  height: 85px;
+  height: 100px;
   content: "";
   display: block;
 }
 
-.is-visible {
-  -webkit-animation: slide-up .7s ease-out;
-          animation: slide-up .7s ease-out;
+.fade-in {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.from-bottom {
+  opacity: 0;
+  -webkit-transform: translateY(10rem);
+          transform: translateY(10rem);
+  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.from-bottom.appear {
+  opacity: 1;
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+}
+
+.from-left {
+  -webkit-transform: translateX(-20rem);
+          transform: translateX(-20rem);
+}
+
+.from-right {
+  -webkit-transform: translateX(20rem);
+          transform: translateX(20rem);
+}
+
+.from-left, .from-right {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.from-left.appear {
+  opacity: 1;
+  -webkit-transform: translateX(0rem);
+          transform: translateX(0rem);
+  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.from-right.appear {
+  opacity: 1;
+  -webkit-transform: translateX(0rem);
+          transform: translateX(0rem);
+  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in;
+  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
 }
 
 @-webkit-keyframes slide-up {
@@ -96,30 +156,8 @@ section:before {
   }
 }
 
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.7, 0.7);
-            transform: scale(0.7, 0.7);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.7, 0.7);
-            transform: scale(0.7, 0.7);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 #home {
-  background: #282a30;
+  color: #282a30;
 }
 
 #home::before {
@@ -203,10 +241,6 @@ nav #logo img {
 }
 
 /* Project home showcase */
-.projects-showcase {
-  background: #f5f2f1;
-}
-
 .projects-showcase #projects {
   width: 90%;
   min-height: 100vh;
@@ -226,7 +260,16 @@ nav #logo img {
           animation: fade-in 1.4s;
 }
 
-.projects-showcase #projects .cards {
+.projects-showcase #projects .project-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects-showcase #projects .project-container .cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,12 +279,13 @@ nav #logo img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 90%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.projects-showcase #projects .cards .card {
+.projects-showcase #projects .project-container .cards .card {
   height: 400px;
   width: 300px;
   position: relative;
@@ -257,13 +301,11 @@ nav #logo img {
   /* Add shadow to cards to increase contrast with white bg */
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   /* On mouse-over, add a deeper shadow */
   /* On hover, increase shadow and decrease img opactity*/
 }
 
-.projects-showcase #projects .cards .card .card-overlay {
+.projects-showcase #projects .project-container .cards .card .card-overlay {
   width: 80%;
   -webkit-transition: .2s;
   transition: .2s;
@@ -277,7 +319,7 @@ nav #logo img {
   color: white;
 }
 
-.projects-showcase #projects .cards .card img {
+.projects-showcase #projects .project-container .cards .card img {
   max-width: 100%;
   position: cover;
   -webkit-transition: .5s ease;
@@ -286,16 +328,16 @@ nav #logo img {
           filter: saturate(0.8);
 }
 
-.projects-showcase #projects .cards .card:hover {
+.projects-showcase #projects .project-container .cards .card:hover {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
 }
 
-.projects-showcase #projects .cards .card:hover .card-overlay {
+.projects-showcase #projects .project-container .cards .card:hover .card-overlay {
   opacity: 1;
 }
 
-.projects-showcase #projects .cards .card:hover img {
+.projects-showcase #projects .project-container .cards .card:hover img {
   opacity: 0.3;
 }
 
@@ -356,7 +398,7 @@ nav #logo img {
 }
 
 #about {
-  background: #323232;
+  color: #282a30;
   min-height: 90vh;
 }
 
@@ -369,29 +411,44 @@ nav #logo img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10rem;
+  margin: 0 5%;
+}
+
+#about .about-container .person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: 0 5%;
+  gap: 10rem;
 }
 
-#about .about-container .about-pic {
+#about .about-container .person .about-pic {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-#about .about-container p {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: justify;
+#about .about-container .person .about-pic img {
+  width: 100%;
+}
+
+#about .about-container .person p {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 #contact {
-  background: #f5f2f1;
-  min-height: 90vh;
+  color: #282a30;
+  min-height: 50vh;
   -ms-flex-line-pack: center;
       align-content: center;
 }
@@ -403,31 +460,6 @@ nav #logo img {
 }
 
 .contact-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 20rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.contact-container .contact-pic {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 70vh;
-}
-
-.contact-container .contact-pic img {
-  height: 100%;
-}
-
-.contact-info {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -446,12 +478,12 @@ nav #logo img {
   text-align: justify;
 }
 
-.contact-info p {
+.contact-container p {
   color: #282a30;
   margin-bottom: 32px;
 }
 
-.contact-info button {
+.contact-container button {
   position: relative;
   padding: 1em 1.5em;
   border: none;
@@ -465,7 +497,7 @@ nav #logo img {
       align-self: center;
 }
 
-.contact-info button::after, .contact-info button::before {
+.contact-container button::after, .contact-container button::before {
   content: '';
   display: block;
   position: absolute;
@@ -477,7 +509,7 @@ nav #logo img {
   border-radius: 2px;
 }
 
-.contact-info button::after {
+.contact-container button::after {
   bottom: 0;
   right: 0;
   border-top-color: transparent;
@@ -486,7 +518,7 @@ nav #logo img {
   border-right-color: #282a30;
 }
 
-.contact-info button::before {
+.contact-container button::before {
   top: 0;
   left: 0;
   border-bottom-color: transparent;
@@ -495,14 +527,15 @@ nav #logo img {
   border-left-color: #282a30;
 }
 
-.contact-info button:hover:after, .contact-info button:hover:before {
+.contact-container button:hover:after, .contact-container button:hover:before {
   width: 100%;
   height: 100%;
 }
 
 footer {
   min-height: 10vh;
-  background: #282a30;
+  background: #f5f2f1;
+  margin-top: 2rem;
   padding-left: 10%;
   padding-right: 10%;
   display: -webkit-box;
