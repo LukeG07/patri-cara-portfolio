@@ -41,6 +41,7 @@ h4 {
   font-family: quasimoda-2, sans-serif;
   font-weight: 100;
   font-style: normal;
+  text-align: justify;
 }
 
 p {
@@ -232,12 +233,71 @@ nav #logo img {
   text-align: center;
 }
 
-.showcase p {
-  width: 33.33%;
+.showcase h4 {
+  width: 30%;
 }
 
-.showcase img {
-  height: 200px;
+.showcase .arrow-container {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.showcase .arrow-container .arrow,
+.showcase .arrow-container .arrow:before {
+  position: absolute;
+  left: 50%;
+}
+
+.showcase .arrow-container .arrow {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #282a30 solid;
+  border-bottom: 2px #282a30 solid;
+}
+
+.showcase .arrow-container .arrow:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #282a30 solid;
+  border-bottom: 1px #282a30 solid;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: arrow;
+          animation-name: arrow;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-10px, -10px);
+            transform: translate(-10px, -10px);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-10px, -10px);
+            transform: translate(-10px, -10px);
+  }
 }
 
 /* Project home showcase */
@@ -258,6 +318,7 @@ nav #logo img {
   color: #282a30;
   -webkit-animation: fade-in 1.4s;
           animation: fade-in 1.4s;
+  margin-bottom: 10rem;
 }
 
 .projects-showcase #projects .project-container {
@@ -273,6 +334,7 @@ nav #logo img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 6rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: horizontal;
@@ -280,9 +342,9 @@ nav #logo img {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 90%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .projects-showcase #projects .project-container .cards .card {
@@ -291,7 +353,6 @@ nav #logo img {
   position: relative;
   background-color: #323232;
   border-radius: 2rem;
-  margin: 3rem 3rem;
   overflow: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -354,7 +415,7 @@ nav #logo img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 5%;
+  margin: 2rem 0 5% 5%;
   color: #323232;
   width: 90%;
 }
@@ -397,6 +458,39 @@ nav #logo img {
   max-width: 100%;
 }
 
+.project-article .arrow {
+  position: relative;
+  display: inline-block;
+  margin: 40px;
+  padding: 40px;
+  -webkit-box-shadow: 15px -15px 0 0 tomato inset;
+          box-shadow: 15px -15px 0 0 tomato inset;
+}
+
+.project-article .arrow--left {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 25px;
+}
+
+.project-article .arrow--right {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  right: 25px;
+}
+
+.project-article .arrow--up {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  top: 25px;
+}
+
+.project-article .arrow--down {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 25px;
+}
+
 #about {
   color: #282a30;
   min-height: 90vh;
@@ -404,7 +498,7 @@ nav #logo img {
 
 #about h2 {
   margin-left: 5%;
-  margin-bottom: 32px;
+  margin-bottom: 10rem;
 }
 
 #about .about-container {
@@ -448,7 +542,6 @@ nav #logo img {
 
 #contact {
   color: #282a30;
-  min-height: 50vh;
   -ms-flex-line-pack: center;
       align-content: center;
 }
@@ -456,7 +549,7 @@ nav #logo img {
 #contact h2 {
   color: #282a30;
   margin-left: 5%;
-  margin-bottom: 32px;
+  margin-bottom: 5rem;
 }
 
 .contact-container {
@@ -474,8 +567,8 @@ nav #logo img {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-left: 5%;
-  margin-top: 10rem;
   text-align: justify;
+  margin-bottom: 5rem;
 }
 
 .contact-container p {
