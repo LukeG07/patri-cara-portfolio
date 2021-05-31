@@ -70,7 +70,7 @@ section:before {
 .from-bottom {
     opacity: 0;
     transform: translateY(10rem);
-    transition: transform 0.5s ease-in, opacity 1s ease-in;
+    transition: transform 0.3s ease-in, opacity 0.5s ease-in;
 }
 
 .from-bottom.appear {
@@ -88,32 +88,17 @@ section:before {
 
 .from-left, .from-right {
     opacity: 0;
-    transition: transform 0.5s ease-in, opacity 1s ease-in;
+    transition: transform 0.3s ease-in, opacity 0.5s ease-in;
 }
 
 .from-left.appear {
     opacity: 1;
     transform: translateX(0rem);
-    transition: transform 0.5s ease-in, opacity 1s ease-in;
 }
-
-
 
 .from-right.appear {
     opacity: 1;
     transform: translateX(0rem);
-    transition: transform 0.5s ease-in, opacity 1s ease-in;
-}
-
-@keyframes slide-up {
-    0% {
-        opacity: 0;
-        transform: translateY(10rem)
-    }
-    100% { 
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 @import "home";

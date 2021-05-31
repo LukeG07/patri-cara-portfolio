@@ -81,10 +81,10 @@ section:before {
   opacity: 0;
   -webkit-transform: translateY(10rem);
           transform: translateY(10rem);
-  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  -webkit-transition: opacity 0.5s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.5s ease-in, -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.5s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.5s ease-in, -webkit-transform 0.3s ease-in;
 }
 
 .from-bottom.appear {
@@ -105,56 +105,22 @@ section:before {
 
 .from-left, .from-right {
   opacity: 0;
-  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
+  -webkit-transition: opacity 0.5s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.5s ease-in, -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.5s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.5s ease-in, -webkit-transform 0.3s ease-in;
 }
 
 .from-left.appear {
   opacity: 1;
   -webkit-transform: translateX(0rem);
           transform: translateX(0rem);
-  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
 }
 
 .from-right.appear {
   opacity: 1;
   -webkit-transform: translateX(0rem);
           transform: translateX(0rem);
-  -webkit-transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in;
-  transition: transform 0.5s ease-in, opacity 1s ease-in, -webkit-transform 0.5s ease-in;
-}
-
-@-webkit-keyframes slide-up {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(10rem);
-            transform: translateY(10rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes slide-up {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(10rem);
-            transform: translateY(10rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 
 #home {
@@ -203,16 +169,22 @@ nav ul {
 }
 
 nav #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
   height: 80px;
   overflow: hidden;
   color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-nav #logo img {
-  height: 100%;
+nav #logo h2 {
+  font-family: 'Dancing Script', cursive;
 }
 
 .showcase {
@@ -553,9 +525,6 @@ nav #logo img {
 }
 
 .contact-container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

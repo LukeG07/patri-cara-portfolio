@@ -28,12 +28,14 @@ nav {
         list-style: none;
     }
     #logo{
+        display: flex;
         flex: 4;
         height: 80px;
         overflow: hidden;
         color: black;
-        img {
-            height: 100%;
+        align-items: center;
+        h2 {
+            font-family: 'Dancing Script', cursive;
         }
     }
 }
@@ -92,6 +94,5 @@ nav {
                 transform: translate(-10px, -10px);
             }
         }
-    }
-    
+    }   
 }
