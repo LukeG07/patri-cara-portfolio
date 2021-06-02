@@ -1,4 +1,6 @@
 #about {
+    display: flex;
+    flex-direction: column;
     color: #282a30;
     min-height: 90vh;
     h2 {
@@ -12,7 +14,6 @@
         margin: 0 5%;
         .person {
             display: flex;
-            flex-direction: row;
             gap:10rem;
             .about-pic {
                 flex:1;
@@ -20,10 +21,26 @@
                     width: 100%;
                 }
             }
+            :first{
+                flex-direction: row;
+            }
+            :second{
+                flex-direction: row-reverse;
+            }
             p {
                 flex: 2;
             }
         }
         
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #about {
+        align-items: center;
+    }
+    .person {
+        flex-direction: column;
+        gap:2rem !important;
     }
 }

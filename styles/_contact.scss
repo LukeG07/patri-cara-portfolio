@@ -1,6 +1,7 @@
 #contact {
+    display: flex;
+    flex-direction: column;
     color: #282a30;
-    align-content: center;
     h2 {
         color: #282a30;
         margin-left: 5%;
@@ -68,5 +69,11 @@
             width: 100%;
             height: 100%;
         }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #contact {
+        align-items: center;
     }
 }

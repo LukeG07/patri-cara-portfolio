@@ -123,6 +123,12 @@ section:before {
           transform: translateX(0rem);
 }
 
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
 #home {
   color: #282a30;
 }
@@ -206,7 +212,7 @@ nav #logo h2 {
 }
 
 .showcase h4 {
-  width: 30%;
+  width: 50%;
 }
 
 .showcase .arrow-container {
@@ -463,7 +469,22 @@ nav #logo h2 {
   bottom: 25px;
 }
 
+@media only screen and (max-width: 600px) {
+  #projects {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 #about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #282a30;
   min-height: 90vh;
 }
@@ -489,10 +510,6 @@ nav #logo h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   gap: 10rem;
 }
 
@@ -506,16 +523,50 @@ nav #logo h2 {
   width: 100%;
 }
 
+#about .about-container .person :first {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#about .about-container .person :second {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
 #about .about-container .person p {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
 }
 
+@media only screen and (max-width: 600px) {
+  #about {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .person {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem !important;
+  }
+}
+
 #contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #282a30;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 #contact h2 {
@@ -592,6 +643,14 @@ nav #logo h2 {
 .contact-container button:hover:after, .contact-container button:hover:before {
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  #contact {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 footer {

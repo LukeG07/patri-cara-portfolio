@@ -101,6 +101,12 @@ section:before {
     transform: translateX(0rem);
 }
 
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
 @import "home";
 @import "projects";
 @import "about";
