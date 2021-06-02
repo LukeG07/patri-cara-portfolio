@@ -12,21 +12,25 @@
         flex-direction: column;
         gap:10rem;
         margin: 0 5%;
+        overflow-x: hidden;
         .person {
             display: flex;
             gap:10rem;
+            overflow-x: hidden;
             .about-pic {
                 flex:1;
                 img {
                     width: 100%;
                 }
             }
-            :first{
+            .patri{
                 flex-direction: row;
             }
-            :second{
-                flex-direction: row-reverse;
+
+            .cara{
+                flex-direction: row-reverse !important;
             }
+
             p {
                 flex: 2;
             }

@@ -123,6 +123,25 @@ section:before {
           transform: translateX(0rem);
 }
 
+.cara {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 4rem;
@@ -510,6 +529,7 @@ nav #logo h2 {
           flex-direction: column;
   gap: 10rem;
   margin: 0 5%;
+  overflow-x: hidden;
 }
 
 #about .about-container .person {
@@ -517,6 +537,7 @@ nav #logo h2 {
   display: -ms-flexbox;
   display: flex;
   gap: 10rem;
+  overflow-x: hidden;
 }
 
 #about .about-container .person .about-pic {
@@ -529,18 +550,18 @@ nav #logo h2 {
   width: 100%;
 }
 
-#about .about-container .person :first {
+#about .about-container .person .patri {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 
-#about .about-container .person :second {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+#about .about-container .person .cara {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: row-reverse !important;
+          flex-direction: row-reverse !important;
 }
 
 #about .about-container .person p {
@@ -579,7 +600,6 @@ nav #logo h2 {
   color: #282a30;
   margin-left: 5%;
   margin-bottom: 5rem;
-  width: 100%;
 }
 
 .contact-container {
