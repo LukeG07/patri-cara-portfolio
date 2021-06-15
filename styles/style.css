@@ -237,12 +237,14 @@ nav #logo h2 {
 }
 
 .showcase h4 {
-  width: 50%;
+  text-align: center;
+  width: 30%;
+  margin-top: 3rem;
 }
 
 .showcase .arrow-container {
   position: relative;
-  margin-top: 3rem;
+  margin-top: 8rem;
 }
 
 .showcase .arrow-container .arrow,
