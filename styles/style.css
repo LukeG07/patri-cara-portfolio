@@ -200,22 +200,16 @@ nav ul {
 }
 
 nav #logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
-  height: 80px;
+  height: 60px;
   overflow: hidden;
   color: black;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-nav #logo h2 {
-  font-family: 'Dancing Script', cursive;
+nav #logo img {
+  height: 100%;
 }
 
 .showcase {
